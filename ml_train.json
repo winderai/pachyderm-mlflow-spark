@@ -1,0 +1,25 @@
+{
+  "pipeline": {
+    "name": "ml_train"
+  },
+  "description": "A pipeline runs Spark-MLlib to train a machine learning fraud detector over the given dataset.",
+  "transform": {
+    "cmd": [
+      "spark-submit",
+      "/root/ml-train.py",
+      "/pfs/etl/",
+      "/pfs/out/"
+    ],
+    "image": "winderresearch/pachyderm-spark:0.1.0"
+  },
+  "parallelism_spec": {
+    "constant": 1
+  },
+  "input": {
+    "pfs": {
+      "repo": "etl",
+      "glob": "/"
+    }
+  },
+  "datum_tries": 1
+}

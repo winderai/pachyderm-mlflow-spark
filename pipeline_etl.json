@@ -1,0 +1,25 @@
+{
+  "pipeline": {
+    "name": "etl"
+  },
+  "description": "A pipeline maps a PySpark aggregation function over dataset shards.",
+  "transform": {
+    "cmd": [
+      "spark-submit",
+      "--conf", "spark.ui.enabled=false",  
+      "/root/etl.py",
+      "/pfs/split_data/",
+      "/pfs/out/"
+    ],
+    "image": "winderresearch/pachyderm-spark:0.1.0"
+  },
+  "parallelism_spec": {
+    "constant": 8
+  },
+  "input": {
+    "pfs": {
+      "repo": "split_data",
+      "glob": "/*"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "pipeline": {
+    "name": "split_data"
+  },
+  "description": "A pipeline splits raw datasets producing a chunk per customer.",
+  "transform": {
+    "cmd": [
+      "python",
+      "/split-dataset.py",
+      "/pfs/raw_data/",
+      "/pfs/out/",
+      "--subsample",
+    ],
+    "image": "winderresearch/pachyderm-split-csv:0.1.0"
+  },
+  "parallelism_spec": {
+    "constant": 1
+  },
+  "input": {
+    "pfs": {
+      "repo": "raw_data",
+      "glob": "/*"
+    }
+  }
+}
