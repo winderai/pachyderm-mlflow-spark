@@ -20,7 +20,7 @@ Therefore, I'll demonstrate an example of ML fraud detection based on a syntheti
 
 ## Prerequiestes: 
 
-- The [demo prerequistes](https://gitlab.com/WinderAI/pachyderm/databricks-demo/-/tree/main/minikube_install) shipped in this repository
+- The [demo prerequistes](https://github.com/winderai/pachyderm-mlflow-spark/tree/main/minikube_install) shipped in this repository
 -  A [Pachyderm client](https://docs.pachyderm.com/latest/getting_started/local_installation/#install-pachctl) (i.e. `pachctl`) installed on your local machine
 - Python and Jupyter Lab to run this notebook
 - `unzip` executable to unpack the raw dataset
